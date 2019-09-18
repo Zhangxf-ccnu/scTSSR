@@ -55,13 +55,13 @@ deng_cellLabels <- factor(colnames(deng_count_data),
                                   '4-cell', '8-cell', '16-cell', 'early blastocyst',
                                   'mid blastocyst', 'late blastocyst'))
 name <- c('raw', 'tssr', 'rmd', 'alra', 'saver', 'viper', 'scimpute')
-deng.raw.tscan <- my.TSCAN(deng_pre, deng_cellLabels, name[1])
-deng.tssr.tscan <- my.TSCAN(deng_tssr, deng_cellLabels, name[2])
-deng.rmd.tscan <- my.TSCAN(t(exp(deng_scrmd)-1), deng_cellLabels, name[3])
-deng.alra.tscan <- my.TSCAN(t(exp(deng_alra$A_norm_rank_k_cor_sc)-1), deng_cellLabels, name[4])
-deng.saver.tscan <- my.TSCAN(deng_saver, deng_cellLabels, name[5])
-deng.viper.tscan <- my.TSCAN(deng_viper, deng_cellLabels, name[6])
-deng.scimpute.tscan <- my.TSCAN(deng_scimpute, deng_cellLabels, name[7])
+deng.raw.tscan <- my.TSCAN(deng_pre, deng_cellLabels)
+deng.tssr.tscan <- my.TSCAN(deng_tssr, deng_cellLabels)
+deng.rmd.tscan <- my.TSCAN(t(exp(deng_scrmd)-1), deng_cellLabels)
+deng.alra.tscan <- my.TSCAN(t(exp(deng_alra$A_norm_rank_k_cor_sc)-1), deng_cellLabels)
+deng.saver.tscan <- my.TSCAN(deng_saver, deng_cellLabels)
+deng.viper.tscan <- my.TSCAN(deng_viper, deng_cellLabels)
+deng.scimpute.tscan <- my.TSCAN(deng_scimpute, deng_cellLabels)
 
 save.image("scTSSR-data/deng_tscan_results.RData")
 
