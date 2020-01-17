@@ -1,0 +1,8 @@
+## change your directory 
+cd "AutoImpute Model"
+
+
+## run AutoImpute on the deng dataset 
+python AutoImpute.py --data deng_log2.csv --imputed_save deng_log2_imputed_matrix --iterations 500
+
+

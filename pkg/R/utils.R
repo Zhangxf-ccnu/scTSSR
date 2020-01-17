@@ -74,32 +74,6 @@ calc.size.factor <- function(x) {
 
 
 
-#update.output <- function(f, ind, start, stop, out, x, sf, scale.sf, mu,
-
-#                          nworkers, estimates.only) {
-
-#  n <- stop-start+1
-
-#  ind1 <- ind[start:stop]
-
-#  results <- f(x[ind1, , drop = FALSE], sf, scale.sf,
-
-#               mu[ind1, , drop = FALSE], nworkers, estimates.only)
-
-#  out$estimate[ind1, ] <- results$est
-
-#  if (!estimates.only) {
-
-#    out$se[ind1, ] <- results$se
-
-#  }
-
-#  out$info[[2]][ind1] <- results[[8]]
-
-#  return(out)
-
-#}
-
 
 
 calc.lambda <- function(X_count, percent){
@@ -129,6 +103,28 @@ shrinkage <- function(X, lambda, penalize_diagonal){
 
   return(Bbar)
 
+}
+
+
+
+objective <- function(X, lambda, A, B){
+
+  objval <- (0.5*norm(X - A%*%X - X%*%B - A%*%X%*%B, 'F')^2 + lambda*sum(abs(A)) + lambda*sum(abs(B)))
+
+  return(objval)
+}
+
+
+
+regularizer_define <- function(weight_matrix ,lambda1 = 1.0, lambda2 = 1e10){
+  lambda1 * k_sum(k_abs(weight_matrix), axis = c(1,2)) + lambda2 * tf$linalg$trace(tf$square(weight_matrix))
+}
+
+
+
+
+loss_define <- function(y_true, y_pred){
+  0.5 * k_sum(k_square(y_true - y_pred), axis = c(1,2))
 }
 
 

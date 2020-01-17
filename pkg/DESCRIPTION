@@ -10,6 +10,6 @@ Encoding: UTF-8
 LazyData: true
 RoxygenNote: 6.1.1
 Depends: R (>= 3.1)
-Imports: SAVER
+Imports: SAVER, keras, tensorflow
 Suggests: knitr, rmarkdown
 VignetteBuilder: knitr

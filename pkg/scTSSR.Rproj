@@ -9,13 +9,12 @@ UseSpacesForTab: Yes
 NumSpacesForTab: 2
 Encoding: UTF-8
 
-RnwWeave: knitr
+RnwWeave: Sweave
 LaTeX: pdfLaTeX
 
 AutoAppendNewline: Yes
 StripTrailingWhitespace: Yes
 
 BuildType: Package
-PackageInstallArgs: -v && Rscript -e "Rd2roxygen::rab(install=TRUE)"
-PackageCheckArgs: --as-cran
-PackageRoxygenize: rd,collate,namespace
+PackageUseDevtools: Yes
+PackageInstallArgs: --no-multiarch --with-keep.source

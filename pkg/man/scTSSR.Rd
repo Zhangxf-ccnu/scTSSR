@@ -4,16 +4,21 @@
 \alias{scTSSR}
 \title{use scTSSR to impute dropout values in scRNA-seq data}
 \usage{
-scTSSR(X_count, lambda = NULL, initA = NULL, initB = NULL,
-  percent = 0.1, ncores = 1, MAX_ITER = 4, ABSTOL = 0.001,
-  gamma = 1, beta = 0.5, max_iter = 100, abstol = 1e-04,
-  penalize_diagonal = FALSE, estimates.only = FALSE)
+scTSSR(X_count, lambda1 = NULL, lambda2 = 1e+10, initA = NULL,
+  initB = NULL, percent = 0.05, ncores = 1, MAX_ITER = 4,
+  ABSTOL = 0.001, learning_rate = 1e-04, epochs = 100,
+  batch_size = 128, run_batch = TRUE, verbose = TRUE,
+  estimates.only = FALSE)
 }
 \arguments{
 \item{X_count}{An expression count matrix. The rows correspond to genes and
 the columns correspond to cells. Can be sparse.}
 
-\item{lambda}{Tuning parameter to facilitate feature selection and regularization.}
+\item{lambda1}{Tuning parameter to facilitate feature selection and regularization.}
+
+\item{lambda2}{Tuning parameter to penalize the diagonal elements of the parameter to
+eliminate the trivial solution of representing an expression level as a linear combination
+of itself.}
 
 \item{initA}{The initionlization of A. The elements of A represent the similarities
 between genes.}
@@ -30,18 +35,17 @@ expressed in at most percent*\eqn{100\%} of the cells.}
 
 \item{ABSTOL}{Absolute tolerance of the external circulation.}
 
-\item{gamma}{The step size.}
+\item{learning_rate}{A hyper-parameter that controls the speed of adjusting the weights of the network
+with respect to the loss gradient.}
 
-\item{beta}{The line search parameter.}
+\item{epochs}{The number of the entire training set going through the entire network.}
 
-\item{max_iter}{Maximum iteration of the accelerated proximal gradient descent algorithm.}
+\item{batch_size}{The number of examples that are fed to the algorithm at a time.}
 
-\item{abstol}{Absolute tolerance of the accelerated proximal gradient descent algorithm.}
+\item{run_batch}{Whether to use batch or to set the number of all the samples as the value of the batch size.
+Default is TRUE.}
 
-\item{penalize_diagonal}{Whether penalize the diagonal elements of
-the regression coefficient matrix. Default is FALSE.}
-
-\item{estimates.only}{Only return the imputed data. Default is FALSE.}
+\item{verbose}{Whether to output the value of metrics at the end of each epoch. Default is TRUE.}
 }
 \value{
 If `estimates.only = TRUE', then a matrix of scTSSR estimates.
@@ -71,6 +75,7 @@ use scTSSR to impute dropout values in scRNA-seq data
 \examples{
 
 data("baron")
+
 baron_imputation_result = scTSSR(baron$count.samp)
 
 }

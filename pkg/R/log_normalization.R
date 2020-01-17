@@ -1,4 +1,3 @@
-# Preprocession and log-normalization
 
 log_normalization = function(x, percent, preprocess.only = FALSE){
 
