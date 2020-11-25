@@ -4,7 +4,7 @@
 Contents of this archive
 ------------------------
 This archive contains 
-(1) pkg: subdirectory that contains the R package.
+(1) Files that belong to the R package.
 
 (2) scTSSR-manual.pdf: reference manual.
 
@@ -24,7 +24,7 @@ library("devtools")
 
 # Step 3. Install the scTSSR package from GitHub.
 
-install_github("Zhangxf-ccnu/scTSSR", subdir="pkg")
+install_github("Zhangxf-ccnu/scTSSR")
 
 
 Useage
