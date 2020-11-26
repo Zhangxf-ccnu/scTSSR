@@ -28,7 +28,7 @@ Taking the baron the dataset as an example, run the following code:
 
 data("baron") 
 
-baron\_imputation\_result <- scTSSR(baron$count.samp, percent=0.05, learning\_rate=0.0001, epochs=100, all\_samples\_as\_batch=TRUE)
+baron\_imputation\_result <- scTSSR(baron$count.samp, percent=0.05, learning\_rate=0.0001, epochs=100)
 
 For detialed usages, please refer to "scTSSR-manual.pdf".
 
