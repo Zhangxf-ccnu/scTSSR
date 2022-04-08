@@ -4,31 +4,32 @@ README file for R package supporting the paper "scTSSR: gene expression recovery
 The scTSSR package has the following R-package dependencies: SAVER, keras, tensorflow.
 The dependent packages will be automatically installed along with scTSSR. You can use the following commands to install scTSSR from GitHub.
 
+Installation
+----------------------
+## Step 1. If the devtools package has been not installed, install the devtools package first. Invoke R and then type
 
-# Step 1. If the devtools package has been not installed, install the devtools package first. Invoke R and then type
+`install.packages("devtools")`
 
-install.packages("devtools")
+## Step 2. Load the devtools package.
 
-# Step 2. Load the devtools package.
+`library("devtools")`
 
-library("devtools")
+## Step 3. Install the scTSSR package from GitHub.
 
-# Step 3. Install the scTSSR package from GitHub.
-
-install_github("Zhangxf-ccnu/scTSSR")
+`install_github("Zhangxf-ccnu/scTSSR")`
 
 
 Useage
-
+----------------------
 Load the library scTSSR in R console, by running
 
-library(scTSSR)
+`library(scTSSR)`
 
 Taking the baron the dataset as an example, run the following code:
 
-data("baron") 
+`data("baron")`
 
-baron\_imputation\_result <- scTSSR(baron$count.samp, percent=0.05, learning\_rate=0.0001, epochs=100)
+`baron\_imputation\_result <- scTSSR(baron$count.samp, percent=0.05, learning\_rate=0.0001, epochs=100)`
 
 For detialed usages, please refer to "scTSSR-manual.pdf".
 
