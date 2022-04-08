@@ -6,7 +6,7 @@ The dependent packages will be automatically installed along with scTSSR. You ca
 
 Installation
 ----------------------
-### Step 1. If the devtools package has been not installed, install the devtools package first. Invoke R and then type
+### Step 1. If the devtools package has been not installed, install the devtools package first. 
 
 `install.packages("devtools")`
 
@@ -33,6 +33,11 @@ Taking the baron the dataset as an example, run the following code:
 
 For detialed usages, please refer to "scTSSR-manual.pdf".
 
+Codes for reproducing the three downstream analyses (such as differential expression analysis, cell clustering analysis and pseudotime analysis) are available in [scTSSR-scTSSR2_experiments_codes](https://github.com/Zhangxf-ccnu/scTSSR-scTSSR2_experiments_codes) and Zenodo website with [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.6423597.svg)](https://doi.org/10.5281/zenodo.6423597).
+
+
+Contact
+------------------------
 Please do not hesitate to contact Miss Ke Jin (kej13@mails.ccnu.edu.cn) or Dr. Xiao-Fei Zhang (zhangxf@mail.ccnu.edu.cn) to seek any clarifications regarding any contents or operation of the archive.
 
 
