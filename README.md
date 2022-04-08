@@ -1,8 +1,8 @@
-README file for R package supporting the paper "scTSSR: gene expression recovery for single-cell RNA sequencing using two-side sparse self-representation".
+README file for R package supporting the paper **"scTSSR: gene expression recovery for single-cell RNA sequencing using two-side sparse self-representation"**.
 
 
-The scTSSR package has the following R-package dependencies: SAVER, keras, tensorflow.
-The dependent packages will be automatically installed along with scTSSR. You can use the following commands to install scTSSR from GitHub.
+The `scTSSR` package has the following R-package dependencies: `SAVER`, `keras`, `tensorflow`.
+The dependent packages will be automatically installed along with `scTSSR`. You can use the following commands to install `scTSSR` from GitHub.
 
 Installation
 ----------------------
