@@ -6,15 +6,15 @@ The dependent packages will be automatically installed along with `scTSSR`. You 
 
 Installation
 ----------------------
-### Step 1. If the devtools package has been not installed, install the devtools package first. 
+**Step 1.** If the devtools package has been not installed, install the devtools package first. 
 
 `install.packages("devtools")`
 
-### Step 2. Load the devtools package.
+**Step 2.** Load the devtools package.
 
 `library("devtools")`
 
-### Step 3. Install the scTSSR package from GitHub.
+**Step 3.** Install the scTSSR package from GitHub.
 
 `install_github("Zhangxf-ccnu/scTSSR")`
 
